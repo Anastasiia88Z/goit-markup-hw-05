@@ -19,10 +19,15 @@
 
   --background-black: rgba(47,48,58,1);
 
+  --background-blue: rgba(33, 150, 243, 0.9);
+
   --card-set-gap: 30px;
 
   --icon-color: rgba(175, 177, 184, 1);
 
+  --backdrop: rgba(0, 0, 0, 0.2);
+
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -191,12 +196,35 @@ ul {
   letter-spacing: 0.02em;
   text-decoration: none;
 
+  position: relative;
+
+  padding: 32px 0;
+
+}
+
+/* меню с подчеркиванием */
+
+.site-nav .link:hover::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  display: block; 
+  width: 100%;
+  height: 4px;
+  background-color: var(--background-blue);
+
+  transition: transform 250ms var(--timing-function);
 }
 
 .site-nav .link:hover, 
 .site-nav .link:focus {
   color: var(--blue-text);
   letter-spacing: 0.02em;
+
+  transition: transform 250ms var(--timing-function);
 
 }
 
@@ -226,11 +254,15 @@ ul {
 .auto-nav .link:focus {
   color: var(--blue-text);
   letter-spacing: 0.02em;
+
+  transition: transform 250ms var(--timing-function);
 }
 
 .auto-nav .icon-header:hover,
 .auto-nav .icon-header:focus {
   color: var(--blue-text);
+
+  transition: transform 250ms var(--timing-function);
 }
 
 .auto-nav li:not(:last-child) {
@@ -379,6 +411,8 @@ h3 .title {
 .social-link:focus { 
   background-color: var(--blue-text);
   color: var(--white-text); 
+
+  transition: transform 250ms var(--timing-function);
 }
 
 
@@ -446,6 +480,28 @@ h3 .title {
   text-align: center;
 }
 
+.work-images {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  font-size: 14px;
+  line-height: 1.17;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  bottom: 0;
+
+  font-weight: 700;
+  color: var(--white-text);
+  background-color: rgba(47, 48, 58, 0.8);;
+
+}
+
 /* CLIENTS */
 
 .clients {
@@ -483,6 +539,8 @@ h3 .title {
 .clients-link:focus { 
   border: 1px solid var(--blue-text);
   color: var(--blue-text);
+
+  transition: transform 250ms var(--timing-function);
 }
 
 .clients-logo-1 {
@@ -590,6 +648,8 @@ h3 .title {
 .footer .link:focus {
   color: var(--blue-text);
   letter-spacing: 0.03em;
+
+  transition: transform 250ms var(--timing-function);
 }
 
 .join-list {
@@ -614,6 +674,8 @@ h3 .title {
 .join-link:focus,
 .join-link:hover {
   background-color: var(--blue-text);
+
+  transition: transform 250ms var(--timing-function);
 }
 
 .join-site {
@@ -666,6 +728,8 @@ li .button {
   color: var(--white-text);
   background-color: var(--blue-text);
   letter-spacing: 0.03em;
+
+  transition: transform 250ms var(--timing-function);
 }
 
 /* portfolio-site */
@@ -754,6 +818,9 @@ li .button {
   height: 294px;
   margin: 0;
 
+  position: relative;
+  overflow: hidden;
+
 } 
 
 /* .site-card {
@@ -769,4 +836,89 @@ li .button {
 .site-card:hover,
 .site-card:focus {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); 
+
+  transition: transform 250ms var(--timing-function);
 }
+
+.text-hover {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.03em;
+  color: var(--white-text);
+
+  padding: 63px 24px;
+
+}
+
+.hover-box {
+  background-color: var(--background-blue);
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: translateY(100%);
+  transition: transform 250ms var(--timing-function);
+
+}
+
+.card {
+  text-decoration: none;
+}
+
+.site-card:hover .hover-box {
+  transform: translateY(0);
+
+  transition: transform 250ms var(--timing-function);
+}
+
+/* модальное окно */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--backdrop); 
+
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: visible;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 528px;
+  height: 581px;
+  background-color: var(--background-white);
+  
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  left: 100%;
+  transform: translateX(-38px); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-white);
+  border: 1px solid var(--logo-text); 
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
