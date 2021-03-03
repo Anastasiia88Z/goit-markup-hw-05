@@ -88,6 +88,7 @@ h3 {
   font-size: 36px;
   line-height: 1.17;
   letter-spacing: 0.03em;
+
 }
 
 .title-w {
@@ -200,9 +201,10 @@ ul {
 
   padding: 32px 0;
 
-  transition: transform 250ms var(--timing-function);
+  transition: color 250ms var(--timing-function);
 
 }
+
 
 .current::after {
   content: "";
@@ -219,21 +221,6 @@ ul {
 }
 
 /* меню с подчеркиванием */
-
-/* .site-nav .link:hover::after {
-  content: "";
-
-  position: absolute;
-  left: 0;
-  bottom: 0;
-
-  display: block; 
-  width: 100%;
-  height: 4px;
-  background-color: var(--background-blue);
-
-  transition: transform 250ms var(--timing-function);
-} */
 
 .site-nav .link:hover, 
 .site-nav .link:focus {
@@ -262,7 +249,7 @@ ul {
   letter-spacing: 0.02em;
   text-decoration: none;
 
-  transition: transform 250ms var(--timing-function);
+  transition: color 250ms var(--timing-function);
 
 }
 
@@ -415,7 +402,7 @@ h3 .title {
   fill: var(--white-text);
   background-color: var(--white-text);
 
-  transition: transform 250ms var(--timing-function);
+  transition: background-color 250ms var(--timing-function);
   
 }
 
@@ -445,7 +432,7 @@ h3 .title {
 .title-w-t {
   justify-content: center;
   margin-top: 0;
-  padding-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .work-images {
@@ -472,7 +459,7 @@ h3 .title {
 .title-w { 
   display: flex;
   justify-content: center;
-  padding-bottom: 0px;
+  margin-bottom: 50px;
 }
 
 .team-list {
@@ -549,7 +536,7 @@ h3 .title {
 
   background-color: var(--white-text);
 
-  transition: transform 250ms var(--timing-function);
+  transition: color 250ms var(--timing-function);
 }
 
 .clients-link:hover,
@@ -658,7 +645,7 @@ h3 .title {
   letter-spacing: 0.03em;
   text-decoration: none;
 
-  transition: transform 250ms var(--timing-function);
+  transition: color 250ms var(--timing-function);
 }
 
 .footer .link:hover,
@@ -685,7 +672,7 @@ h3 .title {
   align-items: center;
   margin-right: 10px;
 
-  transition: transform 250ms var(--timing-function);
+  transition: background-color 250ms var(--timing-function);
 }
 
 .join-link:focus,
@@ -737,7 +724,7 @@ li .button {
   line-height: 1.63;
   letter-spacing: 0.03em;
 
-  transition: transform 250ms var(--timing-function);
+  transition: background-color 250ms var(--timing-function);
 }
 
 .button:hover,
@@ -822,7 +809,7 @@ li .button {
   margin-left: var(--card-set-gap);
   margin-top: var(--card-set-gap);
 
-  transition: transform 250ms var(--timing-function);
+  transition: background-color 250ms var(--timing-function);
 }
 
 .site img {
@@ -880,7 +867,7 @@ li .button {
 
   transform: translateY(100%);
 
-  transition: transform 250ms var(--timing-function);
+  transition: background-color 250ms var(--timing-function);
 
 }
 
@@ -922,7 +909,7 @@ li .button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  transition: transform 250ms var(--timing-function);
+  transition: background-color 250ms var(--timing-function);
 
   width: 528px;
   height: 581px;
