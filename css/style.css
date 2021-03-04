@@ -809,7 +809,6 @@ li .button {
   margin-left: var(--card-set-gap);
   margin-top: var(--card-set-gap);
 
-  transition: background-color 250ms var(--timing-function);
 }
 
 .site img {
@@ -867,7 +866,7 @@ li .button {
 
   transform: translateY(100%);
 
-  transition: background-color 250ms var(--timing-function);
+  transition: transform 250ms var(--timing-function);
 
 }
 
